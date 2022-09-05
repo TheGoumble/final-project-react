@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useEffect } from "react"
 
 const Home = ({ getMetaList, setMetaList }) => {
@@ -10,24 +11,26 @@ const Home = ({ getMetaList, setMetaList }) => {
     console.log("getting data")
   }, [setMetaList])
 
-
-  let arr =[]
-  if(getMetaList){
-  for(let i=0; getMetaList.length > i; i++){
-    const meta = getMetaList[i];
-    if (!arr.includes(meta.game)) {
+  let arr = []
+  if (getMetaList) {
+    for (let i = 0; getMetaList.length > i; i++) {
+      const meta = getMetaList[i]
+      if (!arr.includes(meta.game)) {
         arr.push(meta.game)
       }
+    }
   }
-}
 
   return (
     <>
-      {arr.map((gameName) => {
-        return <button>{gameName}</button>
+      {arr.map((game) => {
+        return (
+          <Link key={game} to="/meta/">
+            <button>{game}</button>
+          </Link>
+        )
       })}
     </>
   )
 }
-
 export default Home

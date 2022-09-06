@@ -1,37 +1,23 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import Button from "react-bootstrap/Button"
 import Modal from "react-bootstrap/Modal"
 import Form from "react-bootstrap/Form"
+import { MetaContext } from "../../context/MetaContext"
 
-const AddMeta = ({ setMetaList }) => {
+const AddMeta = () => {
+  const { addMeta } = useContext(MetaContext)
   const [show, setShow] = useState(false)
+
+  const newMeta = (e, username, game, meta) => {
+    addMeta(e, username, game, meta)
+    handleClose()
+  }
   const [username, setUsername] = useState()
   const [game, setGame] = useState()
   const [meta, setMeta] = useState()
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
-  const addMeta = (e, username, game, meta) => {
-    // e.preventDefault()
-    fetch("http://localhost:4046/post", {
-    // fetch("https://us-central1-final-project-api-jv.cloudfunctions.net/api/post", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username: username, game: game, meta: meta }),
-    })
-      .then((results) => results.json())
-      .then((data) => {
-        setMetaList(data)
-        setMeta("")
-      })
-      .catch((err) => console.error(err))
-    console.log("Added data")
-    handleClose()
-  }
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -83,7 +69,7 @@ const AddMeta = ({ setMetaList }) => {
           </Button>
           <Button
             variant="primary"
-            onClick={(e) => addMeta(e, username, game, meta)}
+            onClick={(e) => newMeta(e, username, game, meta)}
           >
             Submit
           </Button>

@@ -2,11 +2,11 @@ import React from "react"
 import AddMeta from "../../components/AddMeta"
 import MetaList from "../../components/MetaList"
 
-const DisplayGameMeta = ({ getMetaList, setMetaList }) => {
+const DisplayGameMeta = () => {
   return (
     <>
-      <AddMeta setMetaList={setMetaList} />
-      <MetaList getMetaList={getMetaList} setMetaList={setMetaList} />
+      <AddMeta/>
+      <MetaList/>
     </>
   )
 }

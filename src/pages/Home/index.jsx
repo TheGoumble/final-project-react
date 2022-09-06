@@ -1,17 +1,12 @@
-import { Link } from "react-router-dom"
-import { useEffect } from "react"
+import { useParams, Link } from "react-router-dom"
+import { useContext } from "react"
+import { MetaContext } from "../../context/MetaContext"
 
-const Home = ({ getMetaList, setMetaList }) => {
-  useEffect(() => {
-    fetch("http://localhost:4046/get")
-      // fetch("https://us-central1-final-project-api-jv.cloudfunctions.net/api/get")
-      .then((results) => results.json())
-      .then((data) => setMetaList(data))
-      .catch((err) => console.error(err))
-    console.log("getting data")
-  }, [setMetaList])
-
+const Home = () => {
+  const { gameName } = useParams()
+  const { getMetaList } = useContext(MetaContext)
   let arr = []
+
   if (getMetaList) {
     for (let i = 0; getMetaList.length > i; i++) {
       const meta = getMetaList[i]
@@ -25,7 +20,7 @@ const Home = ({ getMetaList, setMetaList }) => {
     <>
       {arr.map((game) => {
         return (
-          <Link key={game} to="/meta/">
+          <Link key={game} to={`/meta/${game}`}>
             <button>{game}</button>
           </Link>
         )

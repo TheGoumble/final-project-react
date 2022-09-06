@@ -11,15 +11,11 @@ import Offcanvas from "react-bootstrap/Offcanvas"
 const Header = () => {
   return (
     <>
-      <header>
-        <h1>Meta Beanie</h1>
-      </header>
-
       {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand as={Link} to="/">
-              Meta Beanie
+              <h1>Meta Beanie</h1>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas

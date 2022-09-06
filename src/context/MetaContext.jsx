@@ -14,7 +14,7 @@ const MetaContextProvider = ({ children }) => {
     console.log("getting data")
   }, [setMetaList])
 
-  const addMeta = (e, username, game, meta) => {
+  const addMeta = (e, username, game, meta, metaType) => {
     // e.preventDefault()
     fetch("http://localhost:4046/post", {
     // fetch("https://us-central1-final-project-api-jv.cloudfunctions.net/api/post", {
@@ -23,7 +23,7 @@ const MetaContextProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: username, game: game, meta: meta }),
+      body: JSON.stringify({ username: username, game: game, meta: meta, meta_type: metaType}),
     })
       .then((results) => results.json())
       .then((data) => {
@@ -47,6 +47,22 @@ const MetaContextProvider = ({ children }) => {
       .catch((err) => console.error(err))
     console.log("Post Deleted")
   }
+
+  // const handleUpdate = (e) => {
+  //   const updateMeta = { goodMeta: false }
+
+  //   fetch("http://localhost:4040?game=super mario", {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(updateMeta),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setMetaList(data))
+  //     .catch((err) => console.error(err))
+  //   console.log("Added data")
+  // }
 
   return (
     <MetaContext.Provider value={{getMetaList, setMetaList, addMeta, handleDelete}}>{children}</MetaContext.Provider>

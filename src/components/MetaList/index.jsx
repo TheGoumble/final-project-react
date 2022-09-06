@@ -10,10 +10,11 @@ const MetaList = () => {
   const thisGame = getMetaList.filter((meta) => meta.game === gameName)
   const getList = thisGame?.map((meta) => {
     return (
-      <div key={meta._id}>
+      <div key={meta._id} >
         <h3>Username: {meta.username}</h3>
         <h4>Game: {meta.game}</h4>
         <h5>Meta: {meta.meta}</h5>
+        <h5>{meta.meta_type} Meta</h5>
         <MetaOptions id={meta._id} />
       </div>
     )

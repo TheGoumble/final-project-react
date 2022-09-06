@@ -1,5 +1,8 @@
 import { useState, useContext } from "react"
 import Button from "react-bootstrap/Button"
+import ButtonGroup from "react-bootstrap/ButtonGroup"
+import ToggleButton from "react-bootstrap/ToggleButton"
+
 import Modal from "react-bootstrap/Modal"
 import Form from "react-bootstrap/Form"
 import { MetaContext } from "../../context/MetaContext"
@@ -8,13 +11,17 @@ const AddMeta = () => {
   const { addMeta } = useContext(MetaContext)
   const [show, setShow] = useState(false)
 
-  const newMeta = (e, username, game, meta) => {
-    addMeta(e, username, game, meta)
+  const newMeta = (e, username, game, meta, metaType) => {
+    addMeta(e, username, game, meta, metaType)
     handleClose()
   }
+
   const [username, setUsername] = useState()
   const [game, setGame] = useState()
   const [meta, setMeta] = useState()
+  const [metaType, setMetaType] = useState(null)
+
+  const types = ["good", "bad"]
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
@@ -60,6 +67,22 @@ const AddMeta = () => {
                 rows={4}
                 onChange={(e) => setMeta(e.target.value)}
               />
+              <ButtonGroup>
+                {types.map((type, idx) => (
+                  <ToggleButton
+                    key={idx}
+                    id={`type-${idx}`}
+                    type="radio"
+                    variant={idx % 2 ? "outline-danger" : "outline-success"}
+                    name="type"
+                    value={type}
+                    checked={metaType === type}
+                    onChange={(e) => setMetaType(e.currentTarget.value)}
+                  >
+                    {type}
+                  </ToggleButton>
+                ))}
+              </ButtonGroup>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -69,7 +92,7 @@ const AddMeta = () => {
           </Button>
           <Button
             variant="primary"
-            onClick={(e) => newMeta(e, username, game, meta)}
+            onClick={(e) => newMeta(e, username, game, meta, metaType)}
           >
             Submit
           </Button>

@@ -1,9 +1,8 @@
-import { useParams, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { MetaContext } from "../../context/MetaContext"
 
 const GameButtons = () => {
-  const { gameName } = useParams()
   const { getMetaList } = useContext(MetaContext)
   let arr = []
 

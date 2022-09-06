@@ -12,7 +12,7 @@ const MetaContextProvider = ({ children }) => {
       .then((data) => setMetaList(data))
       .catch((err) => console.error(err))
     console.log("getting data")
-  }, [setMetaList])
+  }, [])
 
   const addMeta = (e, username, game, meta, metaType) => {
     // e.preventDefault()

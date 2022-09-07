@@ -9,10 +9,8 @@ const MetaList = () => {
   const [game, setGame] = useState()
 
   useEffect(() => {
-    console.log("this is my data", getMetaList)
     if (getMetaList) {
       const thisGame = getMetaList.filter((meta) => meta.game === gameName)
-      console.log(thisGame)
 
       setGame(thisGame)
     }

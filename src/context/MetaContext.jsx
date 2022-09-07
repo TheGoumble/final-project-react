@@ -11,7 +11,6 @@ const MetaContextProvider = ({ children }) => {
       .then((results) => results.json())
       .then((data) => setMetaList(data))
       .catch((err) => console.error(err))
-    console.log("getting data")
   }, [])
 
   const addMeta = (e, username, game, meta, metaType) => {

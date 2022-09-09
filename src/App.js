@@ -11,10 +11,10 @@ import LavaLamp from "./components/LavaLamp"
 
 function App() {
   return (
-    // <body>
+    <body>
       <BrowserRouter>
         <MetaContextProvider>
-          <Header />
+          <Header/>
           <LavaLamp />
           <Routes>
             <Route index element={<Home />} />
@@ -22,11 +22,10 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-
           <Footer />
         </MetaContextProvider>
       </BrowserRouter>
-    // </body>
+    </body>
   )
 }
 

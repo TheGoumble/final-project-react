@@ -1,9 +1,10 @@
+import Footer from "../Footer"
+import Header from "../Header"
 import "./lavaLamp.css"
 
 const LavaLamp = () => {
   return (
-    
-      <div>
+    <div>
       <div className="lamp">
         <div className="lava">
           <div className="blob"></div>
@@ -16,8 +17,9 @@ const LavaLamp = () => {
           <div className="blob"></div>
           <div className="blob top"></div>
           <div className="blob bottom"> </div>
+          {/* <Footer className="blob bottom"/> */}
         </div>
-        </div>
+      </div>
 
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>

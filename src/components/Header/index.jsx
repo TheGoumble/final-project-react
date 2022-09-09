@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import Offcanvas from "react-bootstrap/Offcanvas"
-// import "../LavaLamp/lavaLamp.css"
+import "./header.css"
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
       {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand as={Link} to="/">
+            <Navbar.Brand  as={Link} to="/">
               <h1>Meta Beanie</h1>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

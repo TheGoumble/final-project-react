@@ -4,10 +4,11 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import Offcanvas from "react-bootstrap/Offcanvas"
+// import "../LavaLamp/lavaLamp.css"
 
 const Header = () => {
   return (
-    <>
+    <header >
       {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
@@ -35,7 +36,7 @@ const Header = () => {
           </Container>
         </Navbar>
       ))}
-    </>
+    </header>
   )
 }
 

@@ -7,22 +7,26 @@ import About from "./pages/About"
 import NotFound from "./pages/NotFound"
 import Footer from "./components/Footer"
 import "./App.css"
+import LavaLamp from "./components/LavaLamp"
 
 function App() {
   return (
-    <BrowserRouter>
-      <MetaContextProvider>
-        <Header />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="meta/:gameName" element={<DisplayGameMeta />} />
-          <Route path="about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+    // <body>
+      <BrowserRouter>
+        <MetaContextProvider>
+          <Header />
+          <LavaLamp />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path=":gameName" element={<DisplayGameMeta />} />
+            <Route path="about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
 
-        <Footer />
-      </MetaContextProvider>
-    </BrowserRouter>
+          <Footer />
+        </MetaContextProvider>
+      </BrowserRouter>
+    // </body>
   )
 }
 

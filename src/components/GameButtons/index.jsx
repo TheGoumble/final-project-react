@@ -19,7 +19,7 @@ const GameButtons = () => {
     <>
       {arr.map((game) => {
         return (
-          <Link key={game} to={`/meta/${game}`}>
+          <Link key={game} to={`/${game}`}>
             <button>{game}</button>
           </Link>
         )

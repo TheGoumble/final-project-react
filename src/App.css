@@ -6,29 +6,4 @@
   box-sizing: inherit;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 4rem;
-  color: white;
-  background-color: gray;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-between;
-  justify-content: center;
-}
 
-#logos {
-  display: flex;
-  gap: 2rem;
-  justify-content: flex-end;
-}
-#linkedin {
-  width: 70px;
-}
-#github {
-  width: 60px;
-}

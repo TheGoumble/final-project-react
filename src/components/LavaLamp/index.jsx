@@ -7,6 +7,7 @@ const LavaLamp = () => {
     <div>
       <div className="lamp">
         <div className="lava">
+          
           <div className="blob"></div>
           <div className="blob"></div>
           <div className="blob"></div>
@@ -15,9 +16,8 @@ const LavaLamp = () => {
           <div className="blob"></div>
           <div className="blob"></div>
           <div className="blob"></div>
-          <div className="blob top"></div>
-          <div className="blob bottom"> </div>
-          {/* <Footer className="blob bottom"/> */}
+          <Header/>
+          <Footer/>
         </div>
       </div>
 

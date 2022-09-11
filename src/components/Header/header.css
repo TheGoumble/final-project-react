@@ -1,3 +1,29 @@
-header{
-    z-index: 2;
+header {
+  position: absolute;
+  z-index: 2;
+  background: radial-gradient(
+    #ff9c12 0%,
+    #fa9712 40%,
+    #ed8a14 50%,
+    #d67316 70%,
+    #b65419 90%,
+    #9c3a1c 100%
+  );
+  height: 15%;
+  width: 100%;
+  border-radius: 0% 0% 30% 30%;
+}
+#side-bar {
+  display: flex;
+  background: radial-gradient(
+    #ff9c12 0%,
+    #fa9712 40%,
+    #ed8a14 50%,
+    #d67316 70%,
+    #b65419 90%,
+    #9c3a1c 100%
+  );
+  border-radius: 30% 0% 0% 30%;
+  flex-direction: column;
+  align-items: flex-end;
 }

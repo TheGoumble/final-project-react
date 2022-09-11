@@ -14,7 +14,6 @@ function App() {
     <body>
       <BrowserRouter>
         <MetaContextProvider>
-          <Header/>
           <LavaLamp />
           <Routes>
             <Route index element={<Home />} />

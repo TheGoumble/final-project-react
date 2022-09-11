@@ -8,18 +8,19 @@ import "./header.css"
 
 const Header = () => {
   return (
-    <header >
+    <header>
       {[false].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar key={expand} expand={expand} >
           <Container fluid>
             <Navbar.Brand  as={Link} to="/">
               <h1>Meta Beanie</h1>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
+              // id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
+              id="side-bar"
             >
               <Offcanvas.Header closeButton></Offcanvas.Header>
               <Offcanvas.Body>

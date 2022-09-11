@@ -2,6 +2,7 @@ import { useEffect, useContext, useState } from "react"
 import { MetaContext } from "../../context/MetaContext"
 import { useParams } from "react-router-dom"
 import MetaOptions from "../MetaOptions"
+import "./metaList.css"
 
 const MetaList = () => {
   const { gameName } = useParams()
@@ -19,7 +20,7 @@ const MetaList = () => {
   const getList = game?.map((meta) => {
     if (game) {
       return (
-        <div key={meta._id}>
+        <div key={meta._id} id="meta">
           <h3>Username: {meta.username}</h3>
           <h4>Game: {meta.game}</h4>
           <h5>Meta: {meta.meta}</h5>

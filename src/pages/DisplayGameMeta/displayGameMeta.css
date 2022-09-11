@@ -1,6 +1,5 @@
 #display{
     display: flex;
-    border-style: solid;
-    align-items: center;
     flex-direction: column;
+    justify-content: space-between;
 }

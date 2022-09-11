@@ -1,0 +1,12 @@
+#meta {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 55%;
+  height: 35%;
+  padding: 5%;
+  border-radius: 35px;
+  opacity: 0.9;
+  background: radial-gradient(#b3cdd1, #8489a3);
+}

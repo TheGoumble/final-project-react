@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext } from "react"
+import React, { createContext, useState, useEffect} from "react"
 
 export const MetaContext = createContext()
 const MetaContextProvider = ({ children }) => {
@@ -6,8 +6,8 @@ const MetaContextProvider = ({ children }) => {
   const [meta, setMeta] = useState()
 
   useEffect(() => {
-    fetch("http://localhost:4046/get")
-      // fetch("https://us-central1-final-project-api-jv.cloudfunctions.net/api/get")
+    // fetch("http://localhost:4046/get")
+      fetch("https://us-central1-final-project-api-jv.cloudfunctions.net/api/get")
       .then((results) => results.json())
       .then((data) => setMetaList(data))
       .catch((err) => console.error(err))
@@ -15,14 +15,19 @@ const MetaContextProvider = ({ children }) => {
 
   const addMeta = (e, username, game, meta, metaType) => {
     // e.preventDefault()
-    fetch("http://localhost:4046/post", {
-    // fetch("https://us-central1-final-project-api-jv.cloudfunctions.net/api/post", {
+    // fetch("http://localhost:4046/post", {
+      fetch("https://us-central1-final-project-api-jv.cloudfunctions.net/api/post",{
       method: "POST",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: username, game: game, meta: meta, meta_type: metaType}),
+      body: JSON.stringify({
+        username: username,
+        game: game,
+        meta: meta,
+        meta_type: metaType,
+      }),
     })
       .then((results) => results.json())
       .then((data) => {
@@ -34,8 +39,8 @@ const MetaContextProvider = ({ children }) => {
   }
 
   const handleDelete = (e, id) => {
-    fetch(`http://localhost:4046/delete/?_id=${id}`, {
-      // fetch(`https://us-central1-final-project-api-jv.cloudfunctions.net/api/delete/?_id=${id}`, {
+    // fetch(`http://localhost:4046/delete/?_id=${id}`, {
+      fetch(`https://us-central1-final-project-api-jv.cloudfunctions.net/api/delete/?_id=${id}`,{
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +69,11 @@ const MetaContextProvider = ({ children }) => {
   // }
 
   return (
-    <MetaContext.Provider value={{getMetaList, setMetaList, addMeta, handleDelete}}>{children}</MetaContext.Provider>
+    <MetaContext.Provider
+      value={{ getMetaList, setMetaList, addMeta, handleDelete }}
+    >
+      {children}
+    </MetaContext.Provider>
   )
 }
 

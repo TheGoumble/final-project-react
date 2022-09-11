@@ -7,6 +7,7 @@ const DisplayGameMeta = () => {
   return (
     <section id="display">
       <AddMeta/>
+      
       <MetaList/>
     </section>
   )

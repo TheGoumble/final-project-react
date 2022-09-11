@@ -5,11 +5,11 @@ import "./home.css"
 const Home = () => {
   return (
     <section>
-      <div className="home">
-        <h2 >
-          Check out the metas submited for the following games, or submit a meta
-          you found
-        </h2>
+      <h2 className="home">
+        Check out the metas submited for the following games, or submit a meta
+        you found
+      </h2>
+      <div id="button">
         <GameButtons />
       </div>
       <div className="home">

@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import Offcanvas from "react-bootstrap/Offcanvas"
 import "./header.css"
+import Logo from "../../png/MetaBeanieLogo.png"
 
 const Header = () => {
   return (
@@ -12,7 +13,8 @@ const Header = () => {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} >
           <Container fluid>
-            <Navbar.Brand  as={Link} to="/">
+            <Navbar.Brand  as={Link} to="/" id="web-title">
+              <img src={Logo} alt="The Meta Beanie logo" id="logo"/>
               <h1>Meta Beanie</h1>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

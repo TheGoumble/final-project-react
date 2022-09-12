@@ -3,7 +3,7 @@ import "./about.css"
 
 const About = () => {
   return (
-    <section>
+    <section id="about">
       <div>
         <h2>What Is a Meta in relation to video games?</h2>
         <h3>

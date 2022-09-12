@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@900&display=swap');
+
 header {
   position: absolute;
   z-index: 2;
@@ -14,6 +16,8 @@ header {
   border-radius: 0% 0% 30% 30%;
 }
 #side-bar {
+  width: 20%;
+  font-size: x-large;
   display: flex;
   background: radial-gradient(
     #ff9c12 0%,
@@ -26,4 +30,14 @@ header {
   border-radius: 30% 0% 0% 30%;
   flex-direction: column;
   align-items: flex-end;
+}
+
+#web-title {
+  font-family: 'MuseoModerno', cursive;
+  display: flex;
+  align-items: flex-end;
+}
+
+#web-title > img {
+  width: 70px;
 }

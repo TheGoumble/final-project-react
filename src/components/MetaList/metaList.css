@@ -1,4 +1,4 @@
-#meta {
+.meta {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -8,5 +8,13 @@
   padding: 5%;
   border-radius: 35px;
   opacity: 0.9;
-  background: radial-gradient(#b3cdd1, #8489a3);
+}
+
+
+.meta.good{
+  /* background: radial-gradient(#b3cdd1, #8489a3); */
+  background: radial-gradient(#b3cdd1, #72a778);
+}
+.meta.bad{
+  background: radial-gradient(#b3cdd1, #9c6f6f);
 }

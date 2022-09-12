@@ -20,7 +20,10 @@ const MetaList = () => {
   const getList = game?.map((meta) => {
     if (game) {
       return (
-        <div key={meta._id} id="meta">
+        <div
+          key={meta._id}
+          className={`meta ${meta.meta_type === "good" ? "good" : "bad"}`}
+        >
           <h3>Username: {meta.username}</h3>
           <h4>Game: {meta.game}</h4>
           <h5>Meta: {meta.meta}</h5>

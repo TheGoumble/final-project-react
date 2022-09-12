@@ -13,13 +13,7 @@ body {
   margin: 0;
   height: 100vh;
   overflow: hidden;
-  background: radial-gradient(
-    #471a19 30%,
-    #290f0e 60%,
-    #120706 80%,
-    #050202 90%,
-    #000000 100%
-  );
+  background: radial-gradient( #471a19 30%, #290f0e 60%, #120706 80%, #050202 90%, #000000 100% );
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }

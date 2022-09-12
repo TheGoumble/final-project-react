@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { MetaContext } from "../../context/MetaContext"
 import Button from "react-bootstrap/Button"
+import "./gameButtons.css"
 
 const GameButtons = () => {
   const { getMetaList } = useContext(MetaContext)
@@ -21,7 +22,7 @@ const GameButtons = () => {
       {arr.map((game) => {
         return (
           <Link key={game} to={`/${game}`}>
-            <Button>{game}</Button>
+            <Button variant="secondary" id="game-buttons" >{game}</Button>
           </Link>
         )
       })}

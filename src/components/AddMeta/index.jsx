@@ -25,9 +25,23 @@ const AddMeta = () => {
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+
+  const inputGame = () => {
+    return (
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Game</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Pac-man"
+          onChange={(e) => setGame(e.target.value)}
+        />
+      </Form.Group>
+    )
+  }
+
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" size="lg" onClick={handleShow}>
         Post a Meta
       </Button>
 
@@ -46,15 +60,8 @@ const AddMeta = () => {
                 onChange={(e) => setUsername(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Game</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Pac-man"
-                onChange={(e) => setGame(e.target.value)}
-              />
-            </Form.Group>
 
+            {inputGame()}
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"

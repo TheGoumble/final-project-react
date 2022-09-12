@@ -1,11 +1,10 @@
 .meta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  width: 55%;
-  height: 35%;
-  padding: 5%;
+  width: 70%;
+  padding: 2%;
   border-radius: 35px;
   opacity: 0.9;
 }

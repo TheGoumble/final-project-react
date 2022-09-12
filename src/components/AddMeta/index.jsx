@@ -1,43 +1,55 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import ToggleButton from "react-bootstrap/ToggleButton"
-
+import { useParams } from "react-router-dom"
 import Modal from "react-bootstrap/Modal"
 import Form from "react-bootstrap/Form"
 import { MetaContext } from "../../context/MetaContext"
+import "./addMeta.css"
+
+const InputGame = ({ gameName, game, setGame }) => {
+  useEffect(() => {
+    if (gameName) {
+      setGame(gameName)
+      console.log(gameName)
+    }
+  }, [])
+  if(gameName) {
+    return null
+  }
+  return (
+    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form.Label>Game</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Pac-man"
+        value={game}
+        onChange={(e) => setGame(e.target.value)}
+      />
+    </Form.Group>
+  )
+}
 
 const AddMeta = () => {
+  const { gameName } = useParams()
   const { addMeta } = useContext(MetaContext)
   const [show, setShow] = useState(false)
-
-  const newMeta = (e, username, game, meta, metaType) => {
-    addMeta(e, username, game, meta, metaType)
-    handleClose()
-  }
 
   const [username, setUsername] = useState()
   const [game, setGame] = useState()
   const [meta, setMeta] = useState()
   const [metaType, setMetaType] = useState(null)
 
+  const newMeta = (e, username, game, meta, metaType) => {
+    addMeta(e, username, game, meta, metaType)
+    handleClose()
+  }
+
   const types = ["good", "bad"]
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
-
-  const inputGame = () => {
-    return (
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Game</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Pac-man"
-          onChange={(e) => setGame(e.target.value)}
-        />
-      </Form.Group>
-    )
-  }
 
   return (
     <>
@@ -45,7 +57,7 @@ const AddMeta = () => {
         Post a Meta
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}  >
         <Modal.Header closeButton>
           <Modal.Title>Post a Meta</Modal.Title>
         </Modal.Header>
@@ -61,7 +73,7 @@ const AddMeta = () => {
               />
             </Form.Group>
 
-            {inputGame()}
+            <InputGame game={game} gameName={gameName} setGame={setGame} />
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"

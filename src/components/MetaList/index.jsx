@@ -12,7 +12,6 @@ const MetaList = () => {
   useEffect(() => {
     if (getMetaList) {
       const thisGame = getMetaList.filter((meta) => meta.game === gameName)
-
       setGame(thisGame)
     }
   }, [gameName, getMetaList])

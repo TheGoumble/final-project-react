@@ -8,6 +8,8 @@ import Form from "react-bootstrap/Form"
 import { MetaContext } from "../../context/MetaContext"
 import "./addMeta.css"
 
+// Remember to set up validation later
+
 const InputGame = ({ gameName, game, setGame }) => {
   useEffect(() => {
     if (gameName) {
@@ -15,7 +17,7 @@ const InputGame = ({ gameName, game, setGame }) => {
       console.log(gameName)
     }
   }, [])
-  if(gameName) {
+  if (gameName) {
     return null
   }
   return (
@@ -57,15 +59,18 @@ const AddMeta = () => {
         Post a Meta
       </Button>
 
-      <Modal show={show} onHide={handleClose}  >
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Post a Meta</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+
+
+          <Form >
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Username</Form.Label>
               <Form.Control
+                required
                 type="text"
                 placeholder="TheLegend27"
                 autoFocus
@@ -74,6 +79,7 @@ const AddMeta = () => {
             </Form.Group>
 
             <InputGame game={game} gameName={gameName} setGame={setGame} />
+
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
@@ -103,6 +109,8 @@ const AddMeta = () => {
               </ButtonGroup>
             </Form.Group>
           </Form>
+
+
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

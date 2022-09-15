@@ -4,6 +4,8 @@ This was my final project for Boca Code
 - React 
 - React Bootstrap
 - Javascript
+- Firebase hosting
+
 # Demo of the app
 Interact with [app](https://final-project-jv.web.app)
 

@@ -12,4 +12,10 @@ Interact with [app](https://final-project-jv.web.app)
 # Screenshot
 ![Screen shot of the demo](/src/png/Demo.png)
 
+# Set up
+- install node
+-install npm
+- npm i
+- npm start
+
 
